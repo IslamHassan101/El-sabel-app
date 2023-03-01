@@ -50,6 +50,7 @@ fun ViewPager() {
             Spacer(modifier = Modifier.height(8.dp))
             Text(text = "Lorem Ipsum is simply dummy text", color = Color.Gray)
         }
+        Text(text = "TEST")
         Row(modifier = Modifier.padding(bottom = 16.dp)) {
             OutlinedButton(border = BorderStroke(1.dp, color = DarkCrayola),
                 modifier = Modifier.size(width = 138.dp, height = 50.dp),
