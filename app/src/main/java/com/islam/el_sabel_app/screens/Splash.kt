@@ -14,6 +14,7 @@ import com.islam.el_sabel_app.R
 
 @Composable
 fun Splash() {
+
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = R.drawable.el_sabeel_logo),
