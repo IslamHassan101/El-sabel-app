@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">El-sabel-app</string>
+    <string name="el_sabeel_logo">el-sabeel_logo</string>
+    <string name="united_kingdom">united_kingdom</string>
+    <string name="menu_book">menu_book</string>
+    <string name="local_library">local_library</string>
+</resources>
