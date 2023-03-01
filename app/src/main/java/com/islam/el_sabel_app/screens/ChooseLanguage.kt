@@ -2,10 +2,9 @@ package com.islam.el_sabel_app.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Text
-import androidx.compose.material3.OutlinedButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
@@ -17,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.islam.el_sabel_app.R
+import com.islam.el_sabel_app.ui.theme.DarkCrayola
 
 @Composable
 fun ChooseLanguage() {
@@ -49,8 +49,15 @@ fun ChooseLanguage() {
                     painter = painterResource(id = R.drawable.united_kingdom),
                     contentDescription = stringResource(R.string.united_kingdom)
                 )
+
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(text = "ENGLISH", color = Color.Black)
+
+                Icon(
+                    imageVector = Icons.Default.Check,
+                    tint = DarkCrayola,
+                    contentDescription = "check_icon"
+                )
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
