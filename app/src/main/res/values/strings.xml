@@ -4,4 +4,5 @@
     <string name="united_kingdom">united_kingdom</string>
     <string name="menu_book">menu_book</string>
     <string name="local_library">local_library</string>
+    <string name="icon_place_holder">icon_place_holder</string>
 </resources>
