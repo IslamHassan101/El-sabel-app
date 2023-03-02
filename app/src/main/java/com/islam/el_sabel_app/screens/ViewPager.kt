@@ -46,26 +46,26 @@ fun ViewPager() {
                 contentDescription = stringResource(R.string.local_library)
             )
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = "LOREM IPSUM")
+            Text(text = stringResource(R.string.lorem_ipsum))
             Spacer(modifier = Modifier.height(8.dp))
-            Text(text = "Lorem Ipsum is simply dummy text", color = Color.Gray)
+            Text(text = stringResource(R.string.lorem_ipsum_is_simply), color = Color.Gray)
         }
         Column(
             modifier = Modifier.padding(bottom = 16.dp), horizontalAlignment = CenterHorizontally
         ) {
-            Text(text = "TEST")
+            Text(text = stringResource(R.string.test))
             Spacer(modifier = Modifier.height(30.dp))
             Row {
                 OutlinedButton(border = BorderStroke(1.dp, color = DarkCrayola),
                     modifier = Modifier.size(width = 138.dp, height = 50.dp),
                     onClick = { /*TODO*/ }) {
-                    Text(text = "SKIP", color = DarkCrayola)
+                    Text(text = stringResource(R.string.skip), color = DarkCrayola)
                 }
                 Spacer(modifier = Modifier.width(10.dp))
                 Button(modifier = Modifier.size(width = 138.dp, height = 50.dp),
                     colors = ButtonDefaults.buttonColors(DarkCrayola),
                     onClick = { /*TODO*/ }) {
-                    Text(text = "NEXT")
+                    Text(text = stringResource(R.string.next))
                 }
             }
         }

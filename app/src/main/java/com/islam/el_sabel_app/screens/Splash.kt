@@ -1,21 +1,47 @@
 package com.islam.el_sabel_app.screens
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.islam.el_sabel_app.R
+import com.islam.el_sabel_app.route.Screen
+import kotlinx.coroutines.delay
+
 
 @Composable
-fun Splash() {
+fun AnimatedSplash(navController: NavHostController) {
+    var startAnimation by remember { mutableStateOf(false) }
+    val alphaAnim = animateFloatAsState(
+        targetValue = if (startAnimation) 1f else 0f,
+        animationSpec = tween(3000)
+    )
+    LaunchedEffect(key1 = true) {
+        startAnimation = true
+        delay(4000)
+        navController.popBackStack()
+        navController.navigate(route = Screen.ChooseLanguage.route)
+    }
+    Splash(alpha = alphaAnim.value)
+}
 
-    Box(modifier = Modifier.fillMaxSize()) {
+@Composable
+fun Splash(alpha: Float) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .alpha(alpha)
+    ) {
         Image(
             painter = painterResource(id = R.drawable.el_sabeel_logo),
             contentDescription = stringResource(
@@ -44,5 +70,5 @@ fun Splash() {
 @Preview(showBackground = true)
 @Composable
 fun SplashPreview() {
-    Splash()
+    Splash(alpha = 1f)
 }

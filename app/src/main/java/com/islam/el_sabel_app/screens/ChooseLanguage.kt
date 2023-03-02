@@ -15,11 +15,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.islam.el_sabel_app.R
+import com.islam.el_sabel_app.route.Screen
 import com.islam.el_sabel_app.ui.theme.DarkCrayola
+import com.islam.el_sabel_app.ui.theme.YellowCrayola
 
 @Composable
-fun ChooseLanguage() {
+fun ChooseLanguage(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -34,9 +38,9 @@ fun ChooseLanguage() {
             )
         )
         Spacer(modifier = Modifier.height(40.dp))
-        Text(text = "CHOOSE LANGUAGE", fontWeight = FontWeight.Bold)
+        Text(text = stringResource(R.string.choose_language), fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(8.dp))
-        Text(text = "you can change it later from settings")
+        Text(text = stringResource(R.string.you_can_change_it_later))
         Spacer(modifier = Modifier.height(24.dp))
         OutlinedButton(onClick = { /*TODO*/ }) {
             Row(
@@ -51,19 +55,19 @@ fun ChooseLanguage() {
                 )
 
                 Spacer(modifier = Modifier.width(16.dp))
-                Text(text = "ENGLISH", color = Color.Black)
+                Text(text = stringResource(R.string.english), color = Color.Black)
 
                 Icon(
                     imageVector = Icons.Default.Check,
                     tint = DarkCrayola,
-                    contentDescription = "check_icon"
+                    contentDescription = stringResource(R.string.check_icon)
                 )
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
         OutlinedButton(
             onClick = { /*TODO*/ },
-            colors = ButtonDefaults.outlinedButtonColors(Color.LightGray)
+            colors = ButtonDefaults.outlinedButtonColors(YellowCrayola)
         ) {
             Row(
                 modifier = Modifier
@@ -76,18 +80,22 @@ fun ChooseLanguage() {
                     contentDescription = stringResource(R.string.united_kingdom)
                 )
                 Spacer(modifier = Modifier.width(16.dp))
-                Text(text = "العربية", color = Color.Black)
+                Text(text = stringResource(R.string.arabic), color = Color.Black)
             }
         }
         Spacer(modifier = Modifier.height(24.dp))
         Button(
-            enabled = false,
-            onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
-                .height(50.dp)
-        ) {
-            Text(text = "NEXT")
+                .height(50.dp),
+            colors = ButtonDefaults.buttonColors(DarkCrayola),
+            enabled = true,
+            onClick = {
+                navController.navigate(route = Screen.ViewPager.route)
+            },
+
+            ) {
+            Text(text = stringResource(id = R.string.next))
         }
     }
 }
@@ -95,5 +103,5 @@ fun ChooseLanguage() {
 @Preview(showBackground = true)
 @Composable
 fun ChooseLanguagePreview() {
-    ChooseLanguage()
+    ChooseLanguage(navController = rememberNavController())
 }

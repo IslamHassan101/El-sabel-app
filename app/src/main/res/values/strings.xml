@@ -5,4 +5,19 @@
     <string name="menu_book">menu_book</string>
     <string name="local_library">local_library</string>
     <string name="icon_place_holder">icon_place_holder</string>
+    <string name="track">TRACK</string>
+    <string name="start_enrolling">Start enrolling to the track you want</string>
+    <string name="search_here">Search here...</string>
+    <string name="lorem_ipsum">LOREM IPSUM</string>
+    <string name="lorem_ipsum_is_simply">Lorem Ipsum is simply dummy text</string>
+    <string name="test">TEST</string>
+    <string name="skip">SKIP</string>
+    <string name="next">NEXT</string>
+    <string name="explore_more">Explore More</string>
+    <string name="choose_language">CHOOSE LANGUAGE</string>
+    <string name="you_can_change_it_later">you can change it later from settings</string>
+    <string name="english">ENGLISH</string>
+    <string name="check_icon">check_icon</string>
+    <string name="arabic">العربية</string>
+    <string name="search_track_here">Search Tracks here...</string>
 </resources>
